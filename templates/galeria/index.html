@@ -7,13 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alura Space</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static '/styles/style.css'%}">
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600display=swap' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
 </head>
-
-<body>
+<body>'
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo(2).png'%}" alt="Logo da Alura Space" />
@@ -52,7 +51,7 @@
                         <h2 class="cards__titulo">Navegue pela galeria</h2>
                         <ul class="cards__lista">
                             <li class="card">
-                                <a href="imagem.html">
+                                <a href="{% url 'imagem' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png'%}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
@@ -67,7 +66,7 @@
                                 </div>
                             </li>
                             <li class="card">
-                                <a href="imagem.html">
+                                <a href="{% url 'imagem' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png'%}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
@@ -82,7 +81,7 @@
                                 </div>
                             </li>
                             <li class="card">
-                                <a href="imagem.html">
+                                <a href="{% url 'imagem' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
@@ -97,7 +96,7 @@
                                 </div>
                             </li>
                             <li class="card">
-                                <a href="imagem.html">
+                                <a href="{% url 'imagem' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
@@ -112,7 +111,7 @@
                                 </div>
                             </li>
                             <li class="card">
-                                <a href="imagem.html">
+                                <a href="{% url 'imagem' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
@@ -127,7 +126,7 @@
                                 </div>
                             </li>
                             <li class="card">
-                                <a href="imagem.html">
+                                <a href="{% url 'imagem' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
