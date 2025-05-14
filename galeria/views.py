@@ -1,15 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from galeria.models import Fotografia
 
 
-def index(request):
+def index(request): 
+    Fotografias = Fotografia.objects.all()
+    return render(request, 'galeria/index.html', {'cards': Fotografias})
 
-    dados = {
-    1: {"nome": "Nebulosa De Carina",
-        "legenda": " A nebulosa se encontra a uma distância estimada entre 6.500 e 10.000 anos-luz da Terra. Ele aparece na direção da constelação de Carina e situa-se no braço de Carina-Sagitário."},
-    2: {"nome": "Earthrise",
-        "legenda": "A Terra, ao fundo, é visível como um globo azul e branco, com nuvens e massas de terra claramente definidas."}
-}
-    return render(request, 'galeria/index.html', {'cards': dados})
-
-def imagem(request):
-    return render(request, 'galeria/imagem.html')
+def imagem(request, foto_id):
+    Foto = get_object_or_404 (Fotografia, pk=foto_id)
+    return render(request, 'galeria/imagem.html', {"Fotografia": Foto})
