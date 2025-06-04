@@ -1,7 +1,7 @@
 from django import forms
 
 class LoginForms(forms.Form):
-    nomo_login = forms.CharField(
+    nome_login = forms.CharField(
         required=True,
         max_length=100,
         label="Nome de Login",
@@ -19,16 +19,6 @@ class LoginForms(forms.Form):
             attrs={
                 "class": "form-control",
                 "placeholder": "Ex.: Digite sua senha"
-            }
-        )
-    )
-    email = forms.EmailField(
-        required=True,
-        label="Email",
-        widget=forms.EmailInput(
-            attrs={
-                "class": "form-control",
-                "placeholder": "Ex.: joaosilva@xpto.com"
             }
         )
     )
