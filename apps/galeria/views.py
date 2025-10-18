@@ -36,17 +36,30 @@ def nova_imagem(request):
         return redirect('login')
     
     form = FotografiaForm
-    if request.method == "POST":
-        form = FotografiaForm(request.POST)
+    if request.method == 'POST':
+        form = FotografiaForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save
+            form.save()
             messages.success(request, "Imagem cadastrada com sucesso!")
             return redirect('index')
         
     return render(request, 'galeria/nova_imagem.html', {"form": form})
 
-def editar_imagem(request):
-    pass
+def editar_imagem(request, foto_id):
+    fotografia = Fotografia.objects.get(id=foto_id)
+    form = FotografiaForm(instance=fotografia)
+
+    if request.method == 'POST':
+        form = FotografiaForm (request.POST, request.FILES, instance=fotografia)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Imagem editada com sucesso!")
+            return redirect('index')    
+        
+    return render(request, 'galeria/editar_imagem.html',{'form': form, 'foto_id': foto_id})
 
 def deletar_imagem(request, foto_id):
-    pass
+    fotografia = Fotografia.objects.get(id=foto_id)
+    fotografia.delete()
+    messages.success(request, "Imagem deletada com sucesso!")
+    return redirect('index')
