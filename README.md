@@ -81,5 +81,5 @@ python manage.py runserver
 
 Desenvolvido por **[Everton Henrique]** como parte da Formação Django da Alura.
 
-* [**LinkedIn**](**[https://www.linkedin.com/in/everton-henrique-b447ab299/]**)
-* [**GitHub**](**[https://github.com/evertonhenriquea]**)
+* [**LinkedIn**](https://www.linkedin.com/in/everton-henrique-b447ab299/)
+* [**GitHub**](https://github.com/evertonhenriquea)
