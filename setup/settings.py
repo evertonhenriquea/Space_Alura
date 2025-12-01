@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
-from pathlib import Path, os
+from pathlib import Path
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -117,7 +118,6 @@ USE_I18N = True
 USE_TZ = True
 
 #AWS Configuração
-SECRET_KEY = os.getenv("SECRET_KEY")
 
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
@@ -144,7 +144,7 @@ AWS_HEADERS = {
 
 STORAGES = {
     "default": {
-        "BACKEND": "storages.backends.s3.S3Storage",
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
         "OPTIONS": {
             "bucket_name": AWS_STORAGE_BUCKET_NAME,
         },
@@ -162,7 +162,7 @@ STORAGES = {
 }
 
 
-STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/stati{AWS_LOCATION}/"
+STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'setup/static')

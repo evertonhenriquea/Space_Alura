@@ -45,6 +45,7 @@ cd alura-space
 ### 2. Ambiente Virtual e Dependências
 
 python3 -m venv venv
+
 source venv/bin/activate
 
 pip install -r riquarements.txt
@@ -52,6 +53,7 @@ pip install -r riquarements.txt
 ### 3. Banco de Dados e Migrações
 
 python manage.py makemigrations
+
 python manage.py migrate
 
 ### 4. Superusuário (Opcional)
